@@ -9,3 +9,11 @@ task :console do
   # Open a Pry session
   Pry.start
 end
+
+desc "Start the server"
+task :server do
+  # This starts the server using rerun, so we can edit code and reload
+  # the browser to see changes, instead of disconnecting and then re-
+  # connecting the server.
+  exec "rerun -b 'rackup config.ru'"
+end
